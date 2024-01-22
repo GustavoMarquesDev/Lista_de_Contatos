@@ -21,6 +21,7 @@ export const Titulo = styled.h1`
   text-align: center;
   font-style: italic;
   font-weight: bold;
+  color: #5f3dc4;
 `
 
 export const Dados = styled.textarea`

@@ -1,9 +1,13 @@
-import { ButtonEditar } from './styled'
+import { ButtonEditar, NewButton, VoltarButton } from './styled'
 
 type Props = {
   children: string
 }
 
-const Botao = ({ children }: Props) => <ButtonEditar>{children}</ButtonEditar>
+export const Botao = ({ children }: Props) => (
+  <ButtonEditar>{children}</ButtonEditar>
+)
 
-export default Botao
+export const BotaoAdicionar = () => <NewButton to="/novo">+ Novo</NewButton>
+
+export const BotaoVoltar = () => <VoltarButton to="/">X</VoltarButton>

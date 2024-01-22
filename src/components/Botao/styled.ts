@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const ButtonBuscar = styled.button`
@@ -44,7 +45,7 @@ export const ButtonRemove = styled(ButtonEditar)`
   }
 `
 
-export const ButtonNovo = styled.button`
+export const NewButton = styled(Link)`
   background-color: #5f3dc4;
   color: #e5dbff;
   position: fixed;
@@ -53,9 +54,6 @@ export const ButtonNovo = styled.button`
   border: 1px solid #5f3dc4;
   border-radius: 8px;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 14px;
   cursor: pointer;
   padding: 7px;
@@ -65,4 +63,15 @@ export const ButtonNovo = styled.button`
     background-color: #7048e8;
     transition: all 0.5s ease;
   }
+`
+
+export const VoltarButton = styled(Link)`
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  position: absolute;
+  font-size: 20px;
+  top: 7px;
+  right: -25px;
 `

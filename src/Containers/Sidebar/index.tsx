@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Aside, Form, Input } from './styles'
-import { ButtonBuscar, ButtonNovo } from '../../components/Botao/styled'
+import { ButtonBuscar } from '../../components/Botao/styled'
+import { BotaoAdicionar } from '../../components/Botao'
 
 const Sidebar = () => {
   const [filtro, setFiltro] = useState('')
@@ -17,7 +18,7 @@ const Sidebar = () => {
         />
         <ButtonBuscar type="submit">Buscar</ButtonBuscar>
       </Form>
-      <ButtonNovo>+ novo</ButtonNovo>
+      <BotaoAdicionar />
     </Aside>
   )
 }

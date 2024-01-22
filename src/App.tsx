@@ -1,16 +1,25 @@
-import ContatosContainer from './Containers/Contatos'
-import Sidebar from './Containers/Sidebar'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import EstiloGlobal, { Container } from './styles'
+import EstiloGlobal from './styles'
+import Home from './Pages/Home'
+import Cadastro from './Pages/Cadastro'
+
+const rotas = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/novo',
+    element: <Cadastro />
+  }
+])
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <Container>
-        <Sidebar />
-        <ContatosContainer />
-      </Container>
+      <RouterProvider router={rotas} />
     </>
   )
 }
