@@ -1,27 +1,28 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
 
 export const ButtonBuscar = styled.button`
   max-width: 380px;
   width: 100%;
   padding: 7px;
-  border: 1px solid #5f3dc4;
+  border: 1px solid ${variaveis.roxoEscuro};
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  background-color: #5f3dc4;
-  color: #e5dbff;
+  background-color: ${variaveis.roxoEscuro};
+  color: ${variaveis.roxoMaisClaro};
   text-transform: uppercase;
   cursor: pointer;
 
   &:hover {
-    background-color: #7048e8;
+    background-color: ${variaveis.roxoClaro};
     transition: all 0.5s ease;
   }
 `
 
 export const ButtonEditar = styled.button`
-  background-color: #2b8a3e;
+  background-color: ${variaveis.verdeEscuro};
   color: #fff;
   padding: 5px;
   font-size: 13px;
@@ -31,27 +32,27 @@ export const ButtonEditar = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #2f9e44;
+    background-color: ${variaveis.verdeClaro};
     transition: all 0.5s ease;
   }
 `
 
 export const ButtonRemove = styled(ButtonEditar)`
-  background-color: #c92a2a;
+  background-color: ${variaveis.vermelhoEscuro};
   margin-left: 10px;
 
   &:hover {
-    background-color: #e03131;
+    background-color: ${variaveis.vermelhoClaro};
   }
 `
 
 export const NewButton = styled(Link)`
-  background-color: #5f3dc4;
-  color: #e5dbff;
+  background-color: ${variaveis.roxoEscuro};
+  color: ${variaveis.roxoMaisClaro};
   position: fixed;
   bottom: 40px;
   left: 10px;
-  border: 1px solid #5f3dc4;
+  border: 1px solid ${variaveis.roxoEscuro};
   border-radius: 8px;
   text-transform: uppercase;
   font-size: 14px;
@@ -60,7 +61,7 @@ export const NewButton = styled(Link)`
   font-weight: bold;
 
   &:hover {
-    background-color: #7048e8;
+    background-color: ${variaveis.roxoClaro};
     transition: all 0.5s ease;
   }
 `

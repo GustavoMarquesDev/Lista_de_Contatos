@@ -15,16 +15,6 @@ export const Card = styled.div`
   }
 `
 
-export const Titulo = styled.h1`
-  font-size: 2.1rem;
-  padding-top: 20px;
-  margin-bottom: 80px;
-  text-align: center;
-  font-style: italic;
-  font-weight: bold;
-  color: #5f3dc4;
-`
-
 export const Dados = styled.textarea`
   color: #000;
   font-size: 16px;

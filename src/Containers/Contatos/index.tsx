@@ -15,7 +15,11 @@ const ContatosContainer = () => {
 
   return (
     <MainContainer>
-      <CardContatos />
+      {contatosAdicinados.map((c) => (
+        <li key={c.telefone}>
+          <CardContatos nome={c.nome} email={c.email} telefone={c.telefone} />
+        </li>
+      ))}
     </MainContainer>
   )
 }

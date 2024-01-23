@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ButtonBuscar } from '../../components/Botao/styled'
+import variaveis from '../../styles/variaveis'
 
 export const FormUsuario = styled.form`
   padding: 20px;
@@ -25,7 +26,8 @@ export const FormUsuario = styled.form`
 `
 
 export const ButtonAdicionar = styled(ButtonBuscar)`
-  background-color: #b197fc;
+  background-color: ${variaveis.roxoMaisClaro};
+  color: ${variaveis.roxoClaro};
   display: block;
   max-width: 460px;
   width: 100%;
