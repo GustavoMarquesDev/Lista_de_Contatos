@@ -26,10 +26,10 @@ export const FormUsuario = styled.form`
 
 export const ButtonAdicionar = styled(ButtonBuscar)`
   background-color: #b197fc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  display: block;
+  max-width: 460px;
+  width: 100%;
+
   &:hover {
     background-color: #f3f0ff;
     color: #5f3dc4;

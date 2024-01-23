@@ -30,4 +30,5 @@ export const Input = styled.input`
   font-size: 16px;
   margin: 10px 0;
   border: 1px solid #5f3dc4;
+  outline: none;
 `

@@ -6,6 +6,7 @@ export const Card = styled.div`
   padding: 16px;
   margin-bottom: 32px;
   border-radius: 16px;
+  height: 300px;
 
   &:hover {
     transform: translateY(-1px);

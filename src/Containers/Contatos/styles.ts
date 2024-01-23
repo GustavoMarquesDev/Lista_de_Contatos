@@ -8,7 +8,7 @@ export const MainContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 3%;
-  row-gap: 10%;
+  row-gap: 1%;
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
