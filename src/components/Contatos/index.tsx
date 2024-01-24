@@ -1,34 +1,75 @@
+import { useDispatch } from 'react-redux'
+import { useState } from 'react'
 import { ButtonEditar, ButtonRemove } from '../Botao/styled'
 import { Card, Dados } from './styles'
-import { useState } from 'react'
+import { remover, editar } from '../../store/reducers/contatos'
+import Contato from '../../models/Contato'
 
-type Props = {
-  nome: string
-  email: string
-  telefone: number
-}
+type Props = Contato
 
-const CardContatos = ({ nome, email, telefone }: Props) => {
+const CardContatos = ({ id, nome, email, telefone }: Props) => {
+  const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [nomeDescricao, setNomeDescricao] = useState('')
+  const [emailDescricao, setEmailDescricao] = useState('')
+  const [telefoneDescricao, setTelefoneDescricao] = useState('')
+
+  const valorOriginal = () => {
+    return (
+      setEstaEditando(false),
+      setNomeDescricao(''),
+      setEmailDescricao(''),
+      setTelefoneDescricao('')
+    )
+  }
 
   return (
     <Card>
-      <Dados value={nome}></Dados>
-      <Dados value={email}></Dados>
-      <Dados value={telefone}></Dados>
+      <Dados
+        placeholder="Digite um nome"
+        value={nomeDescricao}
+        onChange={(e) => setNomeDescricao(e.target.value)}
+        disabled={!estaEditando}
+      ></Dados>
+      <Dados
+        placeholder="Digite um e-mail"
+        disabled={!estaEditando}
+        value={emailDescricao}
+        onChange={(e) => setEmailDescricao(e.target.value)}
+      ></Dados>
+      <Dados
+        placeholder="Digite um celular"
+        disabled={!estaEditando}
+        value={telefoneDescricao}
+        onChange={(e) => setTelefoneDescricao(e.target.value)}
+      ></Dados>
       {estaEditando ? (
         <>
-          <ButtonEditar>Salvar</ButtonEditar>
-          <ButtonRemove onClick={() => setEstaEditando(false)}>
-            Cancelar
-          </ButtonRemove>
+          <ButtonEditar
+            onClick={() => {
+              dispatch(
+                editar({
+                  id,
+                  nome,
+                  email,
+                  telefone
+                })
+              )
+              setEstaEditando(false)
+            }}
+          >
+            Salvar
+          </ButtonEditar>
+          <ButtonRemove onClick={valorOriginal}>Cancelar</ButtonRemove>
         </>
       ) : (
         <>
           <ButtonEditar onClick={() => setEstaEditando(true)}>
             Editar
           </ButtonEditar>
-          <ButtonRemove>Excluir</ButtonRemove>
+          <ButtonRemove onClick={() => dispatch(remover(id))}>
+            Excluir
+          </ButtonRemove>
         </>
       )}
     </Card>

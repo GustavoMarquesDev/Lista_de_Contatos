@@ -27,4 +27,5 @@ export const Dados = styled.textarea`
   border: none;
   border-bottom: 1px solid #dee2e6;
   background-color: transparent;
+  outline: none;
 `

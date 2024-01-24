@@ -1,23 +1,23 @@
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 import { MainContainer } from './styles'
 import CardContatos from '../../components/Contatos'
-import Contato from '../../models/Contato'
 
 const ContatosContainer = () => {
-  const contatosAdicinados: Contato[] = [
-    new Contato('Gustavo', 'gustavo-markes@hotmail.com', 997135321),
-    new Contato('Pedro', 'pedro-markes@hotmail.com', 997135322),
-    new Contato('Lucas', 'lucas-markes@hotmail.com', 997135323),
-    new Contato('Paulo', 'paulo-markes@hotmail.com', 997135324),
-    new Contato('Paulo', 'paulo-markes@hotmail.com', 997135325),
-    new Contato('Paulo', 'paulo-markes@hotmail.com', 997135326),
-    new Contato('Paulo', 'paulo-markes@hotmail.com', 997135327)
-  ]
+  const contatos = useSelector((state: RootReducer) => state.contatos.itens)
+  const { termo } = useSelector((state: RootReducer) => state.filtro)
 
   return (
     <MainContainer>
-      {contatosAdicinados.map((c) => (
-        <li key={c.telefone}>
-          <CardContatos nome={c.nome} email={c.email} telefone={c.telefone} />
+      {contatos.map((c) => (
+        <li key={c.id}>
+          <CardContatos
+            id={c.id}
+            nome={c.nome}
+            email={c.email}
+            telefone={c.telefone}
+          />
         </li>
       ))}
     </MainContainer>

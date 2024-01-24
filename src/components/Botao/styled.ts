@@ -49,6 +49,10 @@ export const ButtonRemove = styled(ButtonEditar)`
 export const NewButton = styled(Link)`
   background-color: ${variaveis.roxoEscuro};
   color: ${variaveis.roxoMaisClaro};
+  display: flex;
+  max-width: 380px;
+  width: 100%;
+  justify-content: center;
   position: fixed;
   bottom: 40px;
   left: 10px;
@@ -63,6 +67,13 @@ export const NewButton = styled(Link)`
   &:hover {
     background-color: ${variaveis.roxoClaro};
     transition: all 0.5s ease;
+  }
+
+  @media (max-width: 1000px) {
+    width: 230px;
+  }
+  @media (max-width: 655px) {
+    width: 180px;
   }
 `
 
