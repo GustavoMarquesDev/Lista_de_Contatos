@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { ButtonBuscar } from '../../components/Botao/styled'
 import variaveis from '../../styles/variaveis'
 
 export const FormUsuario = styled.form`
@@ -25,12 +24,19 @@ export const FormUsuario = styled.form`
   }
 `
 
-export const ButtonAdicionar = styled(ButtonBuscar)`
+export const ButtonAdicionar = styled.button`
+  max-width: 460px;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid ${variaveis.roxoEscuro};
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
   background-color: ${variaveis.roxoMaisClaro};
   color: ${variaveis.roxoClaro};
-  display: block;
-  max-width: 460px;
-  width: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
 
   &:hover {
     background-color: #f3f0ff;

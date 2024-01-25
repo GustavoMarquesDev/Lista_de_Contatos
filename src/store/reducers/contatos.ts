@@ -33,8 +33,7 @@ const contatosSlice = createSlice({
     },
     cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
       const ContatoJaExiste = state.itens.find(
-        (contato) =>
-          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+        (contato) => contato.telefone === action.payload.telefone
       )
 
       if (ContatoJaExiste) {
@@ -47,6 +46,7 @@ const contatosSlice = createSlice({
           id: ultimoContato ? ultimoContato.id + 1 : 1
         }
         state.itens.push(NovoContato)
+        alert('Contato cadastrado com sucesso')
       }
     }
   }

@@ -8,9 +8,17 @@ const ContatosContainer = () => {
   const contatos = useSelector((state: RootReducer) => state.contatos.itens)
   const { termo } = useSelector((state: RootReducer) => state.filtro)
 
+  // função de filtragem de contatos
+  const filtraContatos = () => {
+    return contatos.filter(
+      (contato) =>
+        contato.nome.toLowerCase().search(termo.toLocaleLowerCase()) >= 0
+    )
+  }
+
   return (
     <MainContainer>
-      {contatos.map((c) => (
+      {filtraContatos().map((c) => (
         <li key={c.id}>
           <CardContatos
             id={c.id}

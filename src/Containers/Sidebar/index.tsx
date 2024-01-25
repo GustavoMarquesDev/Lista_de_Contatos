@@ -1,22 +1,24 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 import { Aside, Form, Input } from './styles'
-import { ButtonBuscar } from '../../components/Botao/styled'
+
 import { BotaoAdicionar } from '../../components/Botao'
+import { alterarTermo } from '../../store/reducers/filtro'
 
 const Sidebar = () => {
-  const [filtro, setFiltro] = useState('')
+  const dispatch = useDispatch()
+  const { termo } = useSelector((state: RootReducer) => state.filtro)
 
   return (
     <Aside>
       <Form>
         <Input
           id="search"
-          value={filtro}
+          value={termo}
           type="text"
-          placeholder="Digite o contato para buscar"
-          onChange={(e) => setFiltro(e.target.value)}
+          placeholder="Digite o nome do contato para buscar"
+          onChange={(e) => dispatch(alterarTermo(e.target.value))}
         />
-        <ButtonBuscar type="submit">Buscar</ButtonBuscar>
       </Form>
       <BotaoAdicionar />
     </Aside>

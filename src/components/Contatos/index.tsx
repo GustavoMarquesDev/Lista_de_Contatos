@@ -17,9 +17,9 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
   const valorOriginal = () => {
     return (
       setEstaEditando(false),
-      setNomeDescricao(''),
-      setEmailDescricao(''),
-      setTelefoneDescricao('')
+      setNomeDescricao(nomeDescricao),
+      setEmailDescricao(emailDescricao),
+      setTelefoneDescricao(telefoneDescricao)
     )
   }
 

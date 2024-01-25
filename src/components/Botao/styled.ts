@@ -2,25 +2,6 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-export const ButtonBuscar = styled.button`
-  max-width: 380px;
-  width: 100%;
-  padding: 7px;
-  border: 1px solid ${variaveis.roxoEscuro};
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: ${variaveis.roxoEscuro};
-  color: ${variaveis.roxoMaisClaro};
-  text-transform: uppercase;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${variaveis.roxoClaro};
-    transition: all 0.5s ease;
-  }
-`
-
 export const ButtonEditar = styled.button`
   background-color: ${variaveis.verdeEscuro};
   color: #fff;
@@ -30,6 +11,14 @@ export const ButtonEditar = styled.button`
   border: none;
   margin-top: 15px;
   cursor: pointer;
+  text-align: center;
+  width: 120px;
+  @media (max-width: 1070px) {
+    display: block;
+
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
 
   &:hover {
     background-color: ${variaveis.verdeClaro};
@@ -44,6 +33,12 @@ export const ButtonRemove = styled(ButtonEditar)`
   &:hover {
     background-color: ${variaveis.vermelhoClaro};
   }
+
+  @media (max-width: 1070px) {
+    display: block;
+
+    margin-left: 0;
+  }
 `
 
 export const NewButton = styled(Link)`
@@ -52,10 +47,8 @@ export const NewButton = styled(Link)`
   display: flex;
   max-width: 380px;
   width: 100%;
+  margin: 0 auto;
   justify-content: center;
-  position: fixed;
-  bottom: 40px;
-  left: 10px;
   border: 1px solid ${variaveis.roxoEscuro};
   border-radius: 8px;
   text-transform: uppercase;
