@@ -5,12 +5,12 @@ import { MainContainer } from './styles'
 import CardContatos from '../../components/Contatos'
 
 const ContatosContainer = () => {
-  const contatos = useSelector((state: RootReducer) => state.contatos.itens)
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
   const { termo } = useSelector((state: RootReducer) => state.filtro)
 
   // função de filtragem de contatos
   const filtraContatos = () => {
-    return contatos.filter(
+    return itens.filter(
       (contato) =>
         contato.nome.toLowerCase().search(termo.toLocaleLowerCase()) >= 0
     )

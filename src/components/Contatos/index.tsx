@@ -9,17 +9,18 @@ type Props = Contato
 
 const CardContatos = ({ id, nome, email, telefone }: Props) => {
   const dispatch = useDispatch()
+
   const [estaEditando, setEstaEditando] = useState(false)
-  const [nomeDescricao, setNomeDescricao] = useState('')
-  const [emailDescricao, setEmailDescricao] = useState('')
-  const [telefoneDescricao, setTelefoneDescricao] = useState('')
+  const [nomeDescricao, setNomeDescricao] = useState(nome)
+  const [emailDescricao, setEmailDescricao] = useState(email)
+  const [telefoneDescricao, setTelefoneDescricao] = useState(telefone)
 
   const valorOriginal = () => {
     return (
       setEstaEditando(false),
-      setNomeDescricao(nomeDescricao),
-      setEmailDescricao(emailDescricao),
-      setTelefoneDescricao(telefoneDescricao)
+      setNomeDescricao(nome),
+      setEmailDescricao(email),
+      setTelefoneDescricao(telefone)
     )
   }
 
@@ -27,9 +28,9 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
     <Card>
       <Dados
         placeholder="Digite um nome"
+        disabled={!estaEditando}
         value={nomeDescricao}
         onChange={(e) => setNomeDescricao(e.target.value)}
-        disabled={!estaEditando}
       ></Dados>
       <Dados
         placeholder="Digite um e-mail"
@@ -41,7 +42,7 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
         placeholder="Digite um celular"
         disabled={!estaEditando}
         value={telefoneDescricao}
-        onChange={(e) => setTelefoneDescricao(e.target.value)}
+        onChange={(e) => setTelefoneDescricao(+e.target.value)}
       ></Dados>
       {estaEditando ? (
         <>
@@ -50,11 +51,12 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
               dispatch(
                 editar({
                   id,
-                  nome,
-                  email,
-                  telefone
+                  nome: nomeDescricao,
+                  email: emailDescricao,
+                  telefone: telefoneDescricao
                 })
               )
+
               setEstaEditando(false)
             }}
           >

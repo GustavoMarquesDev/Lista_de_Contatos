@@ -1,16 +1,20 @@
 import { FormEvent, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { BotaoVoltar } from '../../components/Botao'
 import { ButtonAdicionar } from './styles'
 import { FormUsuario } from './styles'
 import Contato from '../../models/Contato'
 import { cadastrar } from '../../store/reducers/contatos'
+import { RootReducer } from '../../store'
 
 const Form = () => {
   const dispatch = useDispatch()
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [telefone, setTelefone] = useState('')
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+
+  console.log(itens)
 
   const cadastrarContato = (e: FormEvent) => {
     e.preventDefault()
@@ -20,6 +24,7 @@ const Form = () => {
       email,
       parseInt(telefone, 10)
     )
+    console.log(itens)
 
     dispatch(cadastrar(contatoParaAdicionar))
   }

@@ -6,10 +6,7 @@ type ContatosState = {
 }
 
 const initialState: ContatosState = {
-  itens: [
-    new Contato(1, 'Gustavo', 'gustavo-markes@hotmail.com', 997135321),
-    new Contato(2, 'Pedro', 'pedro-markes@hotmail.com', 997135322)
-  ]
+  itens: []
 }
 
 const contatosSlice = createSlice({
@@ -31,13 +28,21 @@ const contatosSlice = createSlice({
         state.itens[indexDoContato] = action.payload
       }
     },
-    cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
-      const ContatoJaExiste = state.itens.find(
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const TelefoneJaExiste = state.itens.find(
         (contato) => contato.telefone === action.payload.telefone
       )
 
-      if (ContatoJaExiste) {
-        alert('Já existe um contato com este nome')
+      const EmailJaExiste = state.itens.find(
+        (contato) => contato.email === action.payload.email
+      )
+
+      if (TelefoneJaExiste) {
+        alert('Já existe um contato cadastrado com este número')
+      }
+
+      if (EmailJaExiste) {
+        alert('Já existe um contato cadastrado com este e-mail')
       } else {
         const ultimoContato = state.itens[state.itens.length - 1]
 
