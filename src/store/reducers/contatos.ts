@@ -39,10 +39,12 @@ const contatosSlice = createSlice({
 
       if (TelefoneJaExiste) {
         alert('Já existe um contato cadastrado com este número')
+        return
       }
 
       if (EmailJaExiste) {
         alert('Já existe um contato cadastrado com este e-mail')
+        return
       } else {
         const ultimoContato = state.itens[state.itens.length - 1]
 

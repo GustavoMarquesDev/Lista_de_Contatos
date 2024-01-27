@@ -76,7 +76,7 @@ export const VoltarButton = styled(Link)`
   width: 50px;
   color: #fff;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   top: 7px;
-  right: -25px;
+  right: -20px;
 `
