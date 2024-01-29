@@ -32,6 +32,7 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
         value={nomeDescricao}
         onChange={(e) => setNomeDescricao(e.target.value)}
       ></Dados>
+
       <Dados
         placeholder="Digite um e-mail"
         disabled={!estaEditando}

@@ -32,3 +32,9 @@ export const Input = styled.input`
   border: 1px solid #5f3dc4;
   outline: none;
 `
+export const ContatosTotal = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-left: 10px;
+`
