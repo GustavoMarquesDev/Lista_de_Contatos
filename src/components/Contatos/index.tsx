@@ -1,9 +1,12 @@
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { ButtonEditar, ButtonRemove } from '../Botao/styled'
-import { Card, Dados } from './styles'
+import { Card, Dados, EmailIcon, PhoneIcon, UserIcon } from './styles'
 import { remover, editar } from '../../store/reducers/contatos'
 import Contato from '../../models/Contato'
+import { MdOutlineMailOutline } from 'react-icons/md'
+import { FaUser } from 'react-icons/fa'
+import { FaPhoneSquare } from 'react-icons/fa'
 
 type Props = Contato
 
@@ -32,6 +35,9 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
         value={nomeDescricao}
         onChange={(e) => setNomeDescricao(e.target.value)}
       ></Dados>
+      <UserIcon>
+        <FaUser />
+      </UserIcon>
 
       <Dados
         placeholder="Digite um e-mail"
@@ -39,12 +45,21 @@ const CardContatos = ({ id, nome, email, telefone }: Props) => {
         value={emailDescricao}
         onChange={(e) => setEmailDescricao(e.target.value)}
       ></Dados>
+      <EmailIcon>
+        <MdOutlineMailOutline />
+      </EmailIcon>
+
       <Dados
         placeholder="Digite um celular"
+        type="number"
         disabled={!estaEditando}
         value={telefoneDescricao}
         onChange={(e) => setTelefoneDescricao(+e.target.value)}
       ></Dados>
+      <PhoneIcon>
+        <FaPhoneSquare />
+      </PhoneIcon>
+
       {estaEditando ? (
         <>
           <ButtonEditar
