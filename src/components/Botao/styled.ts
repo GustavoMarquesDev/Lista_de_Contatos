@@ -24,6 +24,16 @@ export const ButtonEditar = styled.button`
     background-color: ${variaveis.verdeClaro};
     transition: all 0.5s ease;
   }
+
+  @media (max-width: 1100px) {
+    display: block;
+    width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    display: block;
+    width: 100%;
+  }
 `
 
 export const ButtonRemove = styled(ButtonEditar)`
@@ -34,9 +44,8 @@ export const ButtonRemove = styled(ButtonEditar)`
     background-color: ${variaveis.vermelhoClaro};
   }
 
-  @media (max-width: 1070px) {
+  @media (max-width: 1100px) {
     display: block;
-
     margin-left: 0;
   }
 `
@@ -65,6 +74,7 @@ export const NewButton = styled(Link)`
   @media (max-width: 1000px) {
     width: 230px;
   }
+
   @media (max-width: 655px) {
     width: 180px;
   }

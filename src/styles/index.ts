@@ -24,6 +24,10 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 400px auto;
 
+  @media (max-width: 1100px) {
+    grid-template-columns: 250px auto;
+  }
+
   @media (max-width: 1000px) {
     grid-template-columns: 250px auto;
   }

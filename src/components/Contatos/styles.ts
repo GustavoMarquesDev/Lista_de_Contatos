@@ -35,18 +35,18 @@ export const UserIcon = styled.span`
   position: absolute;
   font-size: 20px;
   top: 47px;
-  left: 400px;
+  right: 10px;
 `
 export const EmailIcon = styled.span`
   position: absolute;
   font-size: 20px;
   top: 103px;
-  left: 400px;
+  right: 10px;
 `
 
 export const PhoneIcon = styled.span`
   position: absolute;
   font-size: 20px;
   top: 165px;
-  left: 400px;
+  right: 10px;
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Aside = styled.aside`
   height: 100vh;
   background-color: #e5dbff;
-  padding-top: 10px;
+  padding: 10px 4px 0px 4px;
 
   @media (max-width: 1000px) {
     padding: 0px 10px;

@@ -16,11 +16,16 @@ export const MainContainer = styled.main`
   column-gap: 3%;
   row-gap: 1%;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1440px) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 40px 10px;
   }
 
   @media (max-width: 700px) {
     display: block;
+    padding: 40px;
   }
 `
